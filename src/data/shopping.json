@@ -1,0 +1,67 @@
+[
+	{
+		"itemID" : 1,
+		"item"	: "Black T-Shirt Tom Ford",
+		"description" : "round neck black tshirt",
+		"itemCode" : "123456",
+		"imageURL" : "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1566405549-tom-ford-1566405542.jpg",
+		"price" : 250,
+		"sizes" : ["XS","S","M","L","XL","XXL"],
+		"shippingCharge" : 50,
+		"color" : "Black",
+		"noOFEmi" : 5,
+		"emiPrice" : 50		
+	},	
+	{
+		"itemID" : 2,
+		"item"	: "Blue T-Shirt Tom Ford",
+		"description" : "round neck blue tshirt",
+		"itemCode" : "123455",
+		"imageURL" : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Blue_Tshirt.jpg/220px-Blue_Tshirt.jpg",
+		"price" : 300,
+		"sizes" : ["XS","S","M","L","XL"],
+		"shippingCharge" : 0,
+		"color" : "Blue",
+		"noOFEmi" : 5,
+		"emiPrice" : 60		
+	},
+	{
+		"itemID" : 3,
+		"item"	: "White T-Shirt Jersey",
+		"description" : "round neck white tshirt jersey",
+		"itemCode" : "123460",
+		"imageURL" : "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1553120396-ragbone-1553120387.jpg",
+		"price" : 200,
+		"sizes" : ["XS","S","M","L","XL","XXL"],
+		"shippingCharge" : 0,
+		"color" : "white",
+		"noOFEmi" : 2,
+		"emiPrice" : 100		
+	},
+	{
+		"itemID" : 4,
+		"item"	: "Red T-Shirt Men",
+		"description" : "Coller red tshirt Men",
+		"itemCode" : "123477",
+		"imageURL" : "https://4.imimg.com/data4/MS/GX/MY-9185795/mens-polo-red-t-shirt-500x500.jpg",
+		"price" : 350,
+		"sizes" : ["S","M","L"],
+		"shippingCharge" : 0,
+		"color" : "Red",
+		"noOFEmi" : 10,
+		"emiPrice" : 40		
+	},
+	{
+		"itemID" : 5,
+		"item"	: "Orange T-Shirt Men",
+		"description" : "Orange round neck tshirt Men",
+		"itemCode" : "123499",
+		"imageURL" : "https://images-na.ssl-images-amazon.com/images/I/61oQftzjO7L._UX679_.jpg",
+		"price" : 500,
+		"sizes" : ["S","M","L","XL"],
+		"shippingCharge" : 0,
+		"color" : "Orange",
+		"noOFEmi" : 2,
+		"emiPrice" : 250		
+	}
+]
