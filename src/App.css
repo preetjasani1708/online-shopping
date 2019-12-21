@@ -76,13 +76,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .item_card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     margin: 10px;
-    width: 250px;
+    width: 200px;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -111,11 +111,11 @@
 
 /* Container Item End here */
 
-.CartMenu {
+.cart_icon {
     width: 4%;
 }
 
-.CartStyle {
+.cart_icon_style {
     background-color: black;
     color: white;
     height: 50px;
@@ -156,8 +156,123 @@
     top: 0;
     left: 0px;
     font-size: 36px;
+    cursor: pointer;
 }
 
 #mySidenav {
-    width: 0px;
+    width: 300px;
+}
+
+.cart_list_section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cart_list_icon{
+    height: 10%;
+    text-align: center;
+    color: white;
+    height: 50px;
+}
+
+.cart_list{
+    height: 65%;
+    width: 100%;
+}
+
+.cart_list_item{
+    border-top: black 1px solid;
+    height: 90px;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cart_list_image{
+    width: 20%;
+    padding: 5px 0px;
+}
+.cart_list_detail{
+    width: 60%;
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 9px;
+}
+.cart_list_detail_title{
+    margin: 4px 0px 0px 5px;
+    color: white;
+    font-size: 12px;
+}
+.cart_list_other_detail{
+    margin: 4px 0px 0px 5px;
+    color: grey;
+}
+
+.cart_list_price{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 13px;
+}
+
+.cart_item_price{
+    color: yellow;
+}
+
+.plus_minus{
+    background-color: white;
+    border: none;
+}
+
+.cart_list_subtotal{
+    height: 25%;
+}
+
+.subtotal_dispay{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.subtotal_label{
+    padding: 5%;
+    color: grey;
+    font-size: 15px;
+}
+
+.subtotal_amount{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 10px;
+}
+
+.checkout{
+    height: 70%;
+    padding: 20px;
+}
+
+.checkout button{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    width: 90%;
+    border: none;
+}
+
+.total{
+    color: yellow;
+    font-size: 18px;
+}
+
+.emi{
+    color: grey;
+    font-size: 12px;
 }

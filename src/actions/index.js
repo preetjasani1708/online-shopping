@@ -8,7 +8,12 @@ export const sizeFilter = {
     XXL: 'XXL'
 }
 
-export const defaultDisplay = () =>{
-    type: 'Default_Display'
-   
-}
+export const toggleSideNav = isOpenSideNav => ({
+    type: 'TOGGLE_CART',
+    isOpenSideNav: isOpenSideNav
+})
+
+export const addToCart = id =>({
+    type: 'ADD_TO_CART',
+    id
+})
