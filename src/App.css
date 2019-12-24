@@ -178,6 +178,7 @@
 
 .cart_list{
     height: 65%;
+    overflow-y:auto;
     width: 100%;
 }
 

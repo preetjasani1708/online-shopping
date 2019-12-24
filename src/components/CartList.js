@@ -1,12 +1,15 @@
 import React from 'react';
 
 function CartList(props) {
-    const { toggleCart, isOpen, cartItem, allItems } = props
-    const derivedData = allItems.filter((x) => {
-        const isInCart = cartItem.filter(y => y.id === x.itemID);
-        return isInCart.length ? true : false;
-    })
-    console.log(derivedData);
+    const { toggleCart, isOpen, cartItem, allItems, removeToCart, inc_dec_item } = props
+    let derivedData = cartItem.map((x) => {
+        const isInCart = allItems.filter(y => x.id === y.itemID);
+        return isInCart.length ? { ...isInCart[0], quantity: x.quantity } : false;
+    });
+    const subTotal = derivedData.reduce((accumulator, currentValue) => {
+        return accumulator + (currentValue.price) * (currentValue.quantity);
+    }, 0)
+
     return (
         <div id="mySidenav" className="sidenav" style={{ display: isOpen ? 'block' : 'none' }}>
             <a className="closebtn" onClick={() => toggleCart(false)}>&times;</a>
@@ -17,22 +20,22 @@ function CartList(props) {
                 <div className="cart_list">
                     {derivedData.map(item => {
                         return (
-                            <div className="cart_list_item" key={item.itemID}>
+                            <div className="cart_list_item" key={Math.random() * 78942}>
                                 <div className="cart_list_image">
                                     <img src={item.imageURL} alt="T-shirt" height="100%" width="100%" />
                                 </div>
                                 <div className="cart_list_detail">
                                     <div className="cart_list_detail_title">{item.item}</div>
                                     <div className="cart_list_other_detail">XL | {item.description}</div>
-                                    <div className="cart_list_other_detail">Quantity : 3</div>
+                                    <div className="cart_list_other_detail">Quantity : {item.quantity}</div>
                                 </div>
-                                <div className="cart_list_price">
-                                    <div>&times;</div>
+                                <div className="cart_list_price" >
+                                    <div onClick={() => removeToCart(item.itemID)}>&times;</div>
                                     <div className="cart_item_price">$ {item.price}</div>
                                     <div>
                                         <div>
-                                            <i class="fas fa-minus-square plus_minus"></i>
-                                            <i class="fas fa-plus-square plus_minus"></i>
+                                            <i onClick={() => item.quantity > 1 && inc_dec_item(item.itemID, 'decrement')} className="fas fa-minus-square plus_minus"></i>
+                                            <i onClick={() => inc_dec_item(item.itemID, 'increment')} className="fas fa-plus-square plus_minus"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +48,7 @@ function CartList(props) {
                     <div className="subtotal_dispay">
                         <div className="subtotal_label">SUBTOTAL</div>
                         <div className="subtotal_amount">
-                            <div className="total">$ 550.50</div>
+                            <div className="total">$ {subTotal}</div>
                             <div className="emi">OR UP TO 5x$120</div>
                         </div>
                     </div>

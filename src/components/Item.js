@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import {addToCart} from '../actions/index';
 
-const Item = ({ items,addToCart }) => {
+const Item = ({ items, addToCart, orderByPrice }) => {
+
+    const [value, setValue] = useState('Select')
+
+    function handleChange(e) {
+        setValue(e.target.value);
+    }
+
+    const priceFilteredItems = orderByPrice(items,value);
+
     return (
         <div className="item_display" >
             <div className="item_header" >
-                <div className="no_of_record_found" > 5 Product(s) found </div>
+                <div className="no_of_record_found" > {items.length} Product(s) found </div>
                 <div className="order_by_filter" >
                     <span> Order by </span>
                     <span>
-
+                        <select value={value}
+                            onChange={handleChange} >
+                            <option value="Select">Select</option>
+                            <option value="LowestToHighest">Lowest to highest</option>
+                            <option value="HighestToLowest">Highest to lowest</option>
+                        </select>
                     </span>
                 </div>
             </div>
             <div className="item_container" >
-                {items.map(item => {
+                {priceFilteredItems.map(item => {
                     return (
                         <div className="item_card" key={item.itemID}>
                             <img src={item.imageURL} alt="T-shirt" height="300px" width="100%" />
@@ -34,7 +46,6 @@ const Item = ({ items,addToCart }) => {
     )
 };
 
-
 Item.prototypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
         itemID: PropTypes.number,
@@ -46,12 +57,4 @@ Item.prototypes = {
     }))
 }
 
-const mapStateToProps = (state) => {
-    return { items: state.items };
-}
-
-const mapDispatchToProps = (dispatch) => ({
-    addToCart: (id) => dispatch(addToCart(id))
-  })
-
-export default connect(mapStateToProps,mapDispatchToProps)(Item)
+export default Item
